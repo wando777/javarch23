@@ -1,0 +1,4 @@
+Seller 1;12345678911;seller1@email.com
+Seller 2;11987654321;seller2@email.com
+Seller 3;13467982179;seller3@email.com
+Seller 4;19734682546;seller4@email.com

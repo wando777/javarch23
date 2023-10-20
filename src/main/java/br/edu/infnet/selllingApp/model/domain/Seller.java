@@ -1,9 +1,20 @@
 package br.edu.infnet.selllingApp.model.domain;
 
+import java.util.List;
+
 public class Seller {
 	private String name;
 	private String cpf;
 	private String email;
+	private List<Product> products;
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 
 	public String getName() {
 		return name;
@@ -31,7 +42,7 @@ public class Seller {
 
 	@Override
 	public String toString() {
-		return "Seller [name=" + name + ", cpf=" + cpf + ", email=" + email + "]";
+		return String.format("%s - %s - %s", name, cpf, email);
 	}
 
 }
