@@ -29,4 +29,9 @@ public class Seller {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "Seller [name=" + name + ", cpf=" + cpf + ", email=" + email + "]";
+	}
+
 }
