@@ -3,6 +3,7 @@ package br.edu.infnet.selllingApp;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -10,10 +11,14 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.selllingApp.model.domain.Clothing;
 import br.edu.infnet.selllingApp.model.domain.ClothingSize;
+import br.edu.infnet.selllingApp.model.service.ClothingService;
 
-@Order(2)
+@Order(3)
 @Component
 public class ClothingLoader implements ApplicationRunner {
+
+	@Autowired
+	private ClothingService clothingService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -31,9 +36,15 @@ public class ClothingLoader implements ApplicationRunner {
 			clothing.setBrand(fields[4]);
 			clothing.setSize(ClothingSize.valueOf(fields[5]));
 			clothing.setColor(fields[6]);
-			System.out.println("Product:" + clothing);
+
+			clothingService.put(clothing);
 			row = reader.readLine();
 		}
+
+		for (Clothing clothing : clothingService.getClothingList()) {
+			System.out.println("Clothing:" + clothing);
+		}
+
 		reader.close();
 	}
 
