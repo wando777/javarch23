@@ -2,3 +2,7 @@
 2;any_description2;87;true;any_brand2;SMALL;blue;C
 3;any_description3;97.7;false;any_brand3;MEDIUM;green;C
 4;any_description4;107.3;true;any_brand4;LARGE;gray;C
+10;any_description1;77.7;true;WOOL;3;T
+21;any_description2;87;true;SILK;4;T
+32;any_description3;97.7;false;COTTON;2;T
+43;any_description4;107.3;true;LEATHER;1;T
