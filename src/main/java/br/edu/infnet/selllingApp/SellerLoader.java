@@ -5,16 +5,18 @@ import java.io.FileReader;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.selllingApp.model.domain.Seller;
 
+@Order(1)
 @Component
 public class SellerLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		FileReader file = new FileReader("sellers.txt");
+		FileReader file = new FileReader("inputfiles/sellers.txt");
 		BufferedReader reader = new BufferedReader(file);
 		String row = reader.readLine();
 		String[] fields;
