@@ -1,5 +1,10 @@
 package br.edu.infnet.selllingApp.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Clothing")
 public class Clothing extends Product {
 	private String brand;
 	private ClothingSize size;

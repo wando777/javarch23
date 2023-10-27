@@ -33,7 +33,6 @@ public class SellerLoader implements ApplicationRunner {
 			seller.setEmail(fields[2]);
 
 			sellerService.put(seller);
-
 			row = reader.readLine();
 		}
 

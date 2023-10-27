@@ -32,7 +32,7 @@ public class ProductLoader implements ApplicationRunner {
 			switch (fields[fields.length-1]) {
 			case "C":
 				Clothing clothing = new Clothing();
-				clothing.setId(Integer.valueOf(fields[0]));
+				clothing.setCode(Integer.valueOf(fields[0]));
 				clothing.setDescription(fields[1]);
 				clothing.setPrice(Float.valueOf(fields[2]));
 				clothing.setHasStock(Boolean.valueOf(fields[3]));

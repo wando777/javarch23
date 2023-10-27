@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.selllingApp.model.domain.Clothing;
 import br.edu.infnet.selllingApp.model.domain.ClothingSize;
+import br.edu.infnet.selllingApp.model.domain.Seller;
 import br.edu.infnet.selllingApp.model.service.ClothingService;
 
 @Order(3)
@@ -29,13 +30,18 @@ public class ClothingLoader implements ApplicationRunner {
 		while (row != null) {
 			fields = row.split(";");
 			Clothing clothing = new Clothing();
-			clothing.setId(Integer.valueOf(fields[0]));
+			clothing.setCode(Integer.valueOf(fields[0]));
 			clothing.setDescription(fields[1]);
 			clothing.setPrice(Float.valueOf(fields[2]));
 			clothing.setHasStock(Boolean.valueOf(fields[3]));
 			clothing.setBrand(fields[4]);
 			clothing.setSize(ClothingSize.valueOf(fields[5]));
 			clothing.setColor(fields[6]);
+			
+			Seller seller = new Seller();
+			seller.setId(Integer.valueOf(fields[7]));
+			
+			clothing.setSeller(seller);
 
 			clothingService.put(clothing);
 			row = reader.readLine();

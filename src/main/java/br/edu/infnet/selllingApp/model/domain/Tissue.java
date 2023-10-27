@@ -1,5 +1,10 @@
 package br.edu.infnet.selllingApp.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Tissue")
 public class Tissue extends Product {
 	private TissueType type;
 	private int lenght;
