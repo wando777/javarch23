@@ -17,7 +17,6 @@ public class Seller {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
 	private String name;
 	private String cpf;
 	private String email;
@@ -68,7 +67,7 @@ public class Seller {
 
 	@Override
 	public String toString() {
-		return String.format("%s - %s - %s", name, cpf, email);
+		return String.format("%d - %s - %s - %s", id, name, cpf, email);
 	}
 
 }

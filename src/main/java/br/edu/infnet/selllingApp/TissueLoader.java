@@ -29,9 +29,9 @@ public class TissueLoader implements ApplicationRunner {
 		while (row != null) {
 			fields = row.split(";");
 			Tissue tissue = new Tissue();
-			tissue.setId(Integer.valueOf(fields[0]));
-			tissue.setDescription(fields[1]);
-			tissue.setPrice(Float.valueOf(fields[2]));
+			tissue.setDescription(fields[0]);
+			tissue.setPrice(Float.valueOf(fields[1]));
+			tissue.setCode(Integer.valueOf(fields[2]));
 			tissue.setHasStock(Boolean.valueOf(fields[3]));
 			tissue.setType(TissueType.valueOf(fields[4]));
 			tissue.setLenght(Integer.valueOf(fields[5]));

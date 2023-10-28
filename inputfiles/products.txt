@@ -1,8 +1,8 @@
-231;any_description1;77.7;true;any_brand1;LARGE;red;C
-232;any_description2;87;true;any_brand2;SMALL;blue;C
-211;any_description3;97.7;false;any_brand3;MEDIUM;green;C
-251;any_description4;107.3;true;any_brand4;LARGE;gray;C
-any_description1;77.7;true;WOOL;3;T
-any_description2;87;true;SILK;4;T
-any_description3;97.7;false;COTTON;2;T
-any_description4;107.3;true;LEATHER;1;T
+231;any_description1;77.7;true;any_brand1;LARGE;red;1;C
+232;any_description2;87;true;any_brand2;SMALL;blue;4;C
+211;any_description3;97.7;false;any_brand3;MEDIUM;green;2;C
+251;any_description4;107.3;true;any_brand4;LARGE;gray;3;C
+any_description1;77.7;10;true;WOOL;3;2;T
+any_description2;87;21;true;SILK;4;3;T
+any_description3;97.7;32;false;COTTON;2;1;T
+any_description4;107.3;43;true;LEATHER;1;4;T

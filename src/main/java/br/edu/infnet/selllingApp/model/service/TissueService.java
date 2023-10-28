@@ -1,23 +1,28 @@
 package br.edu.infnet.selllingApp.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.selllingApp.model.domain.Tissue;
+import br.edu.infnet.selllingApp.model.repository.ITissueRepository;
 
 @Service
 public class TissueService {
 
-	private Map<Integer, Tissue> tissueMap = new HashMap<Integer, Tissue>();
+	@Autowired
+	private ITissueRepository tissueRepository;
+
+//	private Map<Integer, Tissue> tissueMap = new HashMap<Integer, Tissue>();
 
 	public void put(Tissue tissue) {
-		tissueMap.put(tissue.getId(), tissue);
+//		tissueMap.put(tissue.getId(), tissue);
+		tissueRepository.save(tissue);
 	}
 
 	public Collection<Tissue> getTissueList() {
-		return tissueMap.values();
+//		return tissueMap.values();
+		return (Collection<Tissue>) tissueRepository.findAll();
 	}
 }
