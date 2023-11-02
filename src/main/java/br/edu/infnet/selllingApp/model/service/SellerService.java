@@ -25,4 +25,8 @@ public class SellerService {
 //		return sellerMap.values();
 		return (Collection<Seller>) sellerRepository.findAll();
 	}
+	
+	public long getQuantity() {
+		return sellerRepository.count();
+	}
 }

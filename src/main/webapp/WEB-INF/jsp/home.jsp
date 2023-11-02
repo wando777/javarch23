@@ -17,10 +17,10 @@
 				<li class="nav-item"><a class="nav-link active" href="/">SellingApp</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="/sellers">Sellers</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Products</a>
+				<li class="nav-item"><a class="nav-link" href="/products">Products</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="#">Clothes</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Tissues</a></li>
+				<li class="nav-item"><a class="nav-link" href="/clothes">Clothes</a></li>
+				<li class="nav-item"><a class="nav-link" href="/tissues">Tissues</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -38,7 +38,7 @@
 			<table class="table">
 				<thead class="table-dark">
 					<tr>
-						<th>title</th>
+						<th>${title}</th>
 					</tr>
 				</thead>
 				<tbody>

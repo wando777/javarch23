@@ -10,7 +10,7 @@ import br.edu.infnet.selllingApp.model.repository.IClothingRepository;
 
 @Service
 public class ClothingService {
-	
+
 	@Autowired
 	private IClothingRepository clothingRepository;
 
@@ -24,5 +24,9 @@ public class ClothingService {
 	public Collection<Clothing> getClothingList() {
 //		return clothingMap.values();
 		return (Collection<Clothing>) clothingRepository.findAll();
+	}
+
+	public long getQuantity() {
+		return clothingRepository.count();
 	}
 }

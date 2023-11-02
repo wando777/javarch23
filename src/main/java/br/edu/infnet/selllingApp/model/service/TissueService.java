@@ -25,4 +25,8 @@ public class TissueService {
 //		return tissueMap.values();
 		return (Collection<Tissue>) tissueRepository.findAll();
 	}
+	
+	public long getQuantity() {
+		return tissueRepository.count();
+	}
 }

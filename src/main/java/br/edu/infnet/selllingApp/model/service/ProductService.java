@@ -30,4 +30,8 @@ public class ProductService {
 	public Collection<Product> getProductList(Seller seller) {
 		return (Collection<Product>) productRepository.getProductList(seller.getId());
 	}
+	
+	public long getQuantity() {
+		return productRepository.count();
+	}
 }
