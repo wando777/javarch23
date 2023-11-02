@@ -2,26 +2,38 @@ package br.edu.infnet.selllingApp.model.domain;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "Seller")
+@Table(name = "Seller", uniqueConstraints = { @UniqueConstraint(columnNames = { "cpf" }),
+		@UniqueConstraint(columnNames = { "email" }) })
+//@Table(name = "Seller")
 public class Seller {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Size(min = 2, max = 50)
 	private String name;
+	@Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")
+//	@Column(unique = true)
 	private String cpf;
+	@Size(min = 2, max = 50)
+//	@Column(unique = true)
 	private String email;
 
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "sellerId")
 	private List<Product> products;
 
