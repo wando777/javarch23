@@ -1,4 +1,4 @@
-Seller 1;123.456.789-11;seller1@email.com
-Seller 2;119.876.543-21;seller2@email.com
-Seller 3;134.679.821-79;seller3@email.com
-Seller 4;197.346.825-46;seller4@email.com
+Seller 1;123.456.789-11;seller1@email.com;58400100
+Seller 2;119.876.543-21;seller2@email.com;58400200
+Seller 3;134.679.821-79;seller3@email.com;58400300
+Seller 4;197.346.825-46;seller4@email.com;58400400

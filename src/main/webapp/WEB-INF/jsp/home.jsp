@@ -39,12 +39,14 @@
 				<thead class="table-dark">
 					<tr>
 						<th>${title}</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="item" items="${collection}">
 						<tr>
 							<td>${item}</td>
+							<td><a href="/${route}/${item.id}/delete">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

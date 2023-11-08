@@ -2,7 +2,7 @@ package br.edu.infnet.selllingApp.model.domain;
 
 import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Pattern;
@@ -36,6 +37,18 @@ public class Seller {
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "sellerId")
 	private List<Product> products;
+
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idAddress")
+	private Address address;
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	public Integer getId() {
 		return id;
@@ -79,7 +92,7 @@ public class Seller {
 
 	@Override
 	public String toString() {
-		return String.format("%d - %s - %s - %s", id, name, cpf, email);
+		return String.format("%d - %s - %s - %s - address(%s)", id, name, cpf, email, address);
 	}
 
 }

@@ -3,12 +3,15 @@ package br.edu.infnet.selllingApp;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.selllingApp.model.domain.Address;
 import br.edu.infnet.selllingApp.model.domain.Seller;
 import br.edu.infnet.selllingApp.model.service.SellerService;
 
@@ -31,8 +34,12 @@ public class SellerLoader implements ApplicationRunner {
 			seller.setName(fields[0]);
 			seller.setCpf(fields[1]);
 			seller.setEmail(fields[2]);
-
-			sellerService.put(seller);
+			seller.setAddress(new Address(fields[3]));
+			try {
+				sellerService.put(seller);
+			} catch (ConstraintViolationException e) {
+				FileLogger.logException("[SELLER] " + seller + "-" + e.getMessage());
+			}
 			row = reader.readLine();
 		}
 

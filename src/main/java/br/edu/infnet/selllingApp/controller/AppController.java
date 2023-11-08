@@ -32,12 +32,12 @@ public class AppController {
 		return "home";
 	}
 
-	@GetMapping(value = "/sellers")
-	public String listSellers(Model model) {
-		model.addAttribute("title", "Sellers:");
-		model.addAttribute("collection", sellerService.getSellerList());
-		return showHome(model);
-	}
+//	@GetMapping(value = "/sellers")
+//	public String listSellers(Model model) {
+//		model.addAttribute("title", "Sellers:");
+//		model.addAttribute("collection", sellerService.getSellerList());
+//		return showHome(model);
+//	}
 
 	@GetMapping(value = "/products")
 	public String listProducts(Model model) {
