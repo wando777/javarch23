@@ -79,7 +79,8 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return String.format("%s - %s - %.2f - %s - %s", id, description, price, hasStock, code);
+		return String.format("id (%s) - description (%s) - price (%.2f) - hasStock (%s) - code (%s) - seller [%s]", id,
+				description, price, hasStock, code, seller);
 
 	}
 

@@ -3,6 +3,7 @@ package br.edu.infnet.selllingApp.model.domain;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,10 +29,10 @@ public class Seller {
 	@Size(min = 2, max = 50)
 	private String name;
 	@Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")
-//	@Column(unique = true)
+	@Column(unique = true)
 	private String cpf;
 	@Size(min = 2, max = 50)
-//	@Column(unique = true)
+	@Column(unique = true)
 	private String email;
 
 	@OneToMany(fetch = FetchType.EAGER)
@@ -92,7 +93,8 @@ public class Seller {
 
 	@Override
 	public String toString() {
-		return String.format("%d - %s - %s - %s - address(%s)", id, name, cpf, email, address);
+		return String.format("%d - %s - %s - %s - address(%s) - products (%d)", id, name, cpf, email, address,
+				products != null ? products.size() : 0);
 	}
 
 }

@@ -26,11 +26,15 @@ public class ProductService {
 //		return productMap.values();
 		return (Collection<Product>) productRepository.findAll();
 	}
-	
+
 	public Collection<Product> getProductList(Seller seller) {
 		return (Collection<Product>) productRepository.getProductList(seller.getId());
 	}
-	
+
+	public void delete(Integer id) {
+		productRepository.deleteById(id);
+	}
+
 	public long getQuantity() {
 		return productRepository.count();
 	}

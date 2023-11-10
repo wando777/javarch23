@@ -15,8 +15,8 @@ public class Address {
 	private Integer id;
 	private String street;
 	private String complement;
-	private String neighborhood;
-	private String stateCode;
+	private String bairro;
+	private String uf;
 	private String cep;
 
 	public Address() {
@@ -60,25 +60,25 @@ public class Address {
 		this.complement = complement;
 	}
 
-	public String getNeighborhood() {
-		return neighborhood;
+	public String getBairro() {
+		return bairro;
 	}
 
-	public void setNeighborhood(String neighborhood) {
-		this.neighborhood = neighborhood;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
-	public String getStateCode() {
-		return stateCode;
+	public String getUf() {
+		return uf;
 	}
 
-	public void setStateCode(String stateCode) {
-		this.stateCode = stateCode;
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("postalCode (%s)", cep);
+		return String.format("postalCode (%s) - neighborhood (%s) - stateCode (%s)", cep, bairro, uf);
 	}
 
 }
