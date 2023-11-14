@@ -35,7 +35,7 @@ public class Seller {
 	@Column(unique = true)
 	private String email;
 
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "sellerId")
 	private List<Product> products;
 

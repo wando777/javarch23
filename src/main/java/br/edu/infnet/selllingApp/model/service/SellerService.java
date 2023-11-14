@@ -3,6 +3,7 @@ package br.edu.infnet.selllingApp.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.selllingApp.clients.IAddressClient;
@@ -15,11 +16,15 @@ public class SellerService {
 
 	@Autowired
 	private ISellerRepository sellerRepository;
-	
+
 	@Autowired
 	private IAddressClient addressClient;
 
 //	private Map<String, Seller> sellerMap = new HashMap<String, Seller>();
+
+	public Seller listBySearch(String cpf) {
+		return sellerRepository.findByCpf(cpf);
+	}
 
 	public void put(Seller seller) {
 //		sellerMap.put(seller.getCpf(), seller);
@@ -30,7 +35,7 @@ public class SellerService {
 
 	public Collection<Seller> getSellerList() {
 //		return sellerMap.values();
-		return (Collection<Seller>) sellerRepository.findAll();
+		return (Collection<Seller>) sellerRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
 	}
 
 	public void delete(Integer id) {

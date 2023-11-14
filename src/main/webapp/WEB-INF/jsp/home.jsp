@@ -22,6 +22,13 @@
 				<li class="nav-item"><a class="nav-link" href="/clothes">Clothes</a></li>
 				<li class="nav-item"><a class="nav-link" href="/tissues">Tissues</a></li>
 			</ul>
+			<c:if test="${not empty collection}">
+				<form class="d-flex" action="/${route}/search">
+					<input class="form-control me-2" type="text" name="searchField"
+						placeholder="Search">
+					<button class="btn btn-primary" type="submit">Search</button>
+				</form>
+			</c:if>
 		</div>
 	</nav>
 
@@ -51,6 +58,13 @@
 					</c:forEach>
 				</tbody>
 			</table>
+		</c:if>
+		<c:if test="${not empty object}">
+			<h2>AppVenda</h2>
+			<hr>
+			<div class="alert alert-success">
+				<strong>Success!</strong> ${object}
+			</div>
 		</c:if>
 	</div>
 </body>
