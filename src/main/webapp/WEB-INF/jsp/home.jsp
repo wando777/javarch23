@@ -34,10 +34,11 @@
 
 	<div class="container mt-3">
 
-		<span class="badge rounded-pill bg-primary">Sellers: ${countSeller}</span>
-		<span class="badge rounded-pill bg-secondary">Products: ${countProduct}</span>
-		<span class="badge rounded-pill bg-success">Clothes: ${countClothing}</span>
-		<span class="badge rounded-pill bg-danger">Tissues: ${countTissue}</span>
+		<span class="badge rounded-pill bg-primary">Sellers:
+			${countSeller}</span> <span class="badge rounded-pill bg-secondary">Products:
+			${countProduct}</span> <span class="badge rounded-pill bg-success">Clothes:
+			${countClothing}</span> <span class="badge rounded-pill bg-danger">Tissues:
+			${countTissue}</span>
 
 		<c:if test="${not empty collection}">
 			<h2>SellingApp</h2>
@@ -59,6 +60,25 @@
 				</tbody>
 			</table>
 		</c:if>
+
+		<c:if test="${not empty sellingDetails}">
+			<hr>
+			<table class="table">
+				<thead class="table-dark">
+					<tr>
+						<th>Selling details:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="item" items="${sellingDetails}">
+						<tr>
+							<td>${item}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+
 		<c:if test="${not empty object}">
 			<h2>AppVenda</h2>
 			<hr>

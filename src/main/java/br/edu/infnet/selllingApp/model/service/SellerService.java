@@ -20,21 +20,17 @@ public class SellerService {
 	@Autowired
 	private IAddressClient addressClient;
 
-//	private Map<String, Seller> sellerMap = new HashMap<String, Seller>();
-
 	public Seller listBySearch(String cpf) {
 		return sellerRepository.findByCpf(cpf);
 	}
 
 	public void put(Seller seller) {
-//		sellerMap.put(seller.getCpf(), seller);
 		Address address = addressClient.searchPostalCode(seller.getAddress().getCep());
 		seller.setAddress(address);
 		sellerRepository.save(seller);
 	}
 
 	public Collection<Seller> getSellerList() {
-//		return sellerMap.values();
 		return (Collection<Seller>) sellerRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
 	}
 
