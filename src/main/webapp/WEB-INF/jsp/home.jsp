@@ -61,22 +61,41 @@
 			</table>
 		</c:if>
 
-		<c:if test="${not empty sellingDetails}">
+		<c:if test="${empty collection}">
 			<hr>
-			<table class="table">
-				<thead class="table-dark">
-					<tr>
-						<th>Selling details:</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="item" items="${sellingDetails}">
+			<form action="/selling_details/add" method="post">
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Enter the field name"
+							name="field">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control"
+							placeholder="Enter the selling description" name="description">
+					</div>
+					<div class="col">
+						<button class="btn btn-primary" type="submit">Submit</button>
+					</div>
+				</div>
+			</form>
+
+			<c:if test="${not empty sellingDetails}">
+				<hr>
+				<table class="table">
+					<thead class="table-dark">
 						<tr>
-							<td>${item}</td>
+							<th>Selling details:</th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<c:forEach var="item" items="${sellingDetails}">
+							<tr>
+								<td>${item}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:if>
 		</c:if>
 
 		<c:if test="${not empty object}">
