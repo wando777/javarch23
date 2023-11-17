@@ -18,4 +18,7 @@ public class SellingService {
 		return sellingsClient.getDetails();
 	}
 
+	public SellingDetails sendDetails(SellingDetails sellingDetails) {
+		return sellingsClient.sendDetails(sellingDetails);
+	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.selllingApp.model.domain.SellingDetails;
 
@@ -12,4 +13,7 @@ public interface ISellingsClient {
 
 	@GetMapping(value = "/details")
 	public List<SellingDetails> getDetails();
+
+	@PostMapping(value = "/details")
+	public SellingDetails sendDetails(SellingDetails sellingDetails);
 }
